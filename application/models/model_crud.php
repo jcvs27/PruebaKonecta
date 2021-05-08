@@ -47,10 +47,11 @@ class Model_crud extends CI_Model{
             'stock' => $param['st'],
             'fecha_creacion' => $param['fec']
         );
-        
+
+        $this->db->where("ID", $id);
         $this->db->update('productos', $campos);
-        $this->db->where('ID', $id);
-        
+       
+
         return 1;
 
     }
