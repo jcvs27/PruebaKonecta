@@ -46,6 +46,7 @@ class Controller_crud extends CI_Controller {
 		$resul  = $this->model_crud->guardar($param);
 		
 		if($resul > 0){
+			$this->load->view('crud');
 			echo json_encode(1);
 		}
 	}
