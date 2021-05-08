@@ -1,0 +1,35 @@
+<?php
+
+
+class Model_crud extends CI_Model{
+
+    function __construct()
+    {   
+        parent::__construct();
+    }
+
+    public function guardar($param){
+
+        $campos = array(
+            'nombre_producto' => $param['np'],
+            'referencia' => $param['re'],
+            'precio' => $param['prec'],
+            'peso' => $param['pes'],
+            'categoria' => $param['cat'],
+            'stock' => $param['st'],
+            'fecha_creacion' => $param['fec']
+        );
+        
+        $this->db->insert('productos', $campos);
+        return $this->db->insert_id();
+
+
+    }
+
+    public function getproductos(){
+        $this->db->select('ID', 'nombre_producto', 'referencia', 'precio', 'peso', 'stock');
+        $this->db->from('productos');
+        $Rep = $this->db->get();
+        return $Rep->result();
+    }
+}

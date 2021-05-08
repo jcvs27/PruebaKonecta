@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/datatables.min.css"/>
+
 	<title>Prueba Konecta</title>
 </head>
 
@@ -59,29 +61,80 @@
 				<div class="list" id="list">
 					<!-- Button trigger modal -->
 					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-						Launch demo modal
+						Registra producto
 					</button>
+					<br><br>
+					<hr>
+		
+					<table class="table" id="Tablaproductos">
+						<thead>
+							<tr>
+								<th scope="col">ID</th>
+								<th scope="col">Nomre producto</th>
+								<th scope="col">Referencia</th>
+								<th scope="col">Precio</th>
+								<th scope="col">Peso</th>
+								<th scope="col">Stock</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
 
-					<!-- Modal -->
-					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog" role="document">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-								</div>
-								<div class="modal-body">
-									...
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-									<button type="button" class="btn btn-primary">Save changes</button>
+					<!-- Modal para registra productos -->
+					<form method="POST" id="Guadarproducto" action="<?php echo base_url(); ?>controller_crud/guardar">
+						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">Registro de producto</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label for="exampleInputNamprod">Nombre Producto</label>
+											<input type="text" class="form-control" id="exampleInputNamprod" name="exampleInputNamprod" placeholder="Enter nombre producto" required>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputRefe">Referencia</label>
+											<input type="text" class="form-control" id="exampleInputRefe" name="exampleInputRefe" placeholder="Referencia" required>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPrecio">Precio</label>
+											<input type="number" class="form-control" id="exampleInputPrecio" name="exampleInputPrecio" placeholder="Precio" required>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPeso">Peso</label>
+											<input type="number" class="form-control" id="exampleInputPeso" name="exampleInputPeso" placeholder="Peso" required>
+										</div>
+										<div class="form-group">
+											<label for="inputcategoria">Categoria</label>
+											<select id="inputcategoria" name="inputcategoria" class="form-control">
+												<option selected>Seleccione ..</option>
+												<option value='1'>Aseo</option>
+												<option value='2'>enlatados</option>
+												<option value='3'>lacteos</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputStock">Stock</label>
+											<input type="number" class="form-control" id="exampleInputStock" name="exampleInputStock" placeholder="Stock" required>
+										</div>
+
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" id="cerrarmodal" data-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-primary">Save changes</button>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</form>
+					<!-- end modal -->
 				</div>
 			</div>
 		</div>
@@ -113,8 +166,12 @@
 	</footer>
 	<!-- Footer -->
 	<!-- Js -->
+	<script>
+		var baseurl = "<?php echo base_url(); ?>";
+	</script>
 	<script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/datatables.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 </body>
 

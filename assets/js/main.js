@@ -35,10 +35,49 @@ $(document).ready(function(){
         $(".menu_3").hide();
         $(".menu_4").show();
     })
-    // abre quiz
-    $(document).on('click', '#AbrirQuiz', function(){
-        var configuracion_ventana = "menubar=yes,location=yes,resizable=yes,scrollbars=yes,status=yes";
-        window.open("https://testmoz.com/q/7377694", "Evaluación - Proyecto de Grado", "_blank", configuracion_ventana);
+   // Guardar la informacion de la creación del producto
+    $(document).submit("#Guadarproducto", function() {
+        $.post(baseurl+'controller_crud/guardar',
+        function (data) {
+          if(data == 1){
+           
+          }else{
+            alert('El registro no se logro hacer');
+          }
+        });
+    });
+    
+
+    $("#Tablaproductos").DataTable({
+        'paging': true,
+        'info': true,
+        'filter':true,
+        'stateSave':true,
+        'ajax':{
+            'url':baseurl+'controller_crud/getproductos/',
+            'type': 'POST',
+            dataSrc: ''
+
+        },
+        "columns":[
+            {
+                data: 'ID'
+            },{
+                data: 'nombre_producto'
+            },{
+                data: 'referencia'
+            },{
+                data: 'precio'
+            },{
+                data: 'peso'
+            },
+            {
+                data: 'stock'
+            }
+
+        ], 
+        "order":[[0, 'DESC']],
+
     });
 
 });

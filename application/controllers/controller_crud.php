@@ -21,11 +21,36 @@ class Controller_crud extends CI_Controller {
      function __construct()
      {
          parent::__construct();
+		 $this->load->model('model_crud');
+		 
      }
 
 
 	public function index()
 	{
 		$this->load->view('crud');
+		
+	}
+
+	public function guardar(){
+		
+		$fechaRegistro = date("Y-m-d");
+		$param['np'] = $this->input->post('exampleInputNamprod');
+		$param['re'] = $this->input->post('exampleInputRefe');
+		$param['prec'] = $this->input->post('exampleInputPrecio');
+		$param['pes'] = $this->input->post('exampleInputPeso');
+		$param['cat'] = $this->input->post('inputcategoria');
+		$param['st'] = $this->input->post('exampleInputStock');
+		$param['fec'] = $fechaRegistro;
+		$resul  = $this->model_crud->guardar($param);
+		
+		if($resul > 0){
+			echo json_encode(1);
+			
+		}
+	}
+
+	public function getproductos(){
+		echo json_encode($this->model_crud->getproductos());
 	}
 }
