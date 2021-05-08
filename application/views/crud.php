@@ -4,9 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/style.css"> 
-	<title>Fase 5</title>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+	<title>Prueba Konecta</title>
 </head>
 
 <body>
@@ -15,11 +15,10 @@
 		<nav class="navbar navbar-expand-lg navbar-light  bg-dark" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu"
-						aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon bg-white"></span>
 					</button>
-					<a href="index.html" class="navbar-brand text-white">Fase 5</a>
+					<a href="index.html" class="navbar-brand text-white">Prueba Konecta</a>
 				</div>
 				<!--Menu -->
 				<div class="row collapse navbar-collapse" id="menu">
@@ -30,17 +29,12 @@
 									aria-controls="pills-home" aria-selected="true">Trabajos Individuales</a>
 							</li>> -->
 							<li class="nav-item">
-								<a class="nav-link text-white" id="menu_2" data-toggle="pill" role="tab"
-									aria-controls="pills-gr" aria-selected="false">Trabajos Grupales</a>
+								<a class="nav-link text-white" id="menu_2" data-toggle="pill" role="tab" aria-controls="pills-gr" aria-selected="false">Registro de productos</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link text-white" id="menu_3" data-toggle="pill" role="tab"
-									aria-controls="pills-exam" aria-selected="false">Evaluación en Línea</a>
+								<a class="nav-link text-white" id="menu_3" data-toggle="pill" role="tab" aria-controls="pills-exam" aria-selected="false">Venta de productos</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white" id="menu_4" data-toggle="pill" role="tab"
-									aria-controls="pills-contact" aria-selected="false">Quienes somos</a>
-							</li>
+
 						</ul>
 					</div>
 				</div>
@@ -50,82 +44,42 @@
 	<!-- Aqui va el jumbotron -->
 	<section class="jumbotron">
 		<div class="container">
-			<h1>Blog Proyecto de Grado</h1>
-			<p class="parrafo">Fase 5</p>
+			<h1>Prueba Konecta</h1>
 		</div>
 	</section>
 	<!-- Todo el contenido -->
 	<section class="main container">
-	
-	
+
+
 		<!-- Contenido de los trabajos iGrupales-->
 		<div class="container menu_2">
 			<h3>Explicación</h3>
-			<p class="parrafo">Documentos de las diferentes fase de los trabajos Colaborativos.</p>
+			<p class="parrafo">Registros de productos y visualización de ellos.</p>
 			<div class="container-list">
 				<div class="list" id="list">
-					<!-- ? Fase #2 -->
-					<div class="row Fase">
-						<div class="col-md-4 foto v mb-1">
-							<p class="label">Fase</p>
-							<img src="" alt="">
-						</div>
-						<div class="col-md-4">
-							<p class="label">Tema</p>
-							<p class="dato">Propuesta Inicial</p>
-						</div>
-						<div class="col-md-4">
-							<p class="label">Documento</p>
-							<a href="https://drive.google.com/file/d/1fxSSrADdlI6CMi_Kng5FXZ2a2GLMdWyH/view?usp=sharing"
-								target="_blank" class="btn btn-primary">Ver</a>
-						</div>
-					</div>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						Launch demo modal
+					</button>
 
-					<!-- ? Fase #3 -->
-					<div class="row Fase">
-						<div class="col-md-4 foto  mb-1">
-							<p class="label">Fase</p>
-							<img src="" alt="">
-						</div>
-						<div class="col-md-4">
-							<p class="label">Tema</p>
-							<p class="dato">Avance de la propuesta</p>
-						</div>
-						<div class="col-md-4">
-							<p class="label">Documento</p>
-							<a href="https://drive.google.com/file/d/1Z0x2aHcCBkIXNmHIkPsgz0oLuc8Pfl5p/view?usp=sharing"
-								target="_blank" class="btn btn-primary">Ver</a>
-						</div>
-					</div>
-
-					<!-- ? Fase #4 -->
-					<div class="row Fase">
-						<div class="col-md-4 foto mb-1">
-							<p class="label">Fase</p>
-							<img src="" alt="">
-						</div>
-						<div class="col-md-4">
-							<p class="label">Tema</p>
-							<p class="dato">Propuesta Ampliada</p>
-						</div>
-						<div class="col-md-4">
-							<p class="label">Documento</p>
-							<a href="https://drive.google.com/drive/folders/1ct6o9RfmL6vZXhOcxtcYrnXM6nmADGvO?usp=sharing"
-								target="_blank" class="btn btn-primary">Ver</a>
-						</div>
-					</div>
-					<div class="row Fase">
-						<div class="col-md-4 foto mb-1">
-							<p class="label">Fase</p>
-							<img src="" alt="">
-						</div>
-						<div class="col-md-4">
-							<p class="label">Tema</p>
-							<p class="dato">Evaluación final por proyecto</p>
-						</div>
-						<div class="col-md-4">
-							<p class="label">Documento</p>
-							<a href="https://drive.google.com/file/d/1-rDlG1ZsR8lDn5UYqPv4nUrf2psgFaSl/view?usp=sharing" target="_blank" class="btn btn-primary">Ver</a>
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>
+								<div class="modal-body">
+									...
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Save changes</button>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -154,14 +108,14 @@
 	<br>
 	<footer class="bg-dark">
 		<div class="text-center">
-			<label class="mt-2">Copyright 2020 - Proyecto de Grado</label>
+			<label class="mt-2">Copyright 2021 - Prueba KONECTA</label>
 		</div>
 	</footer>
 	<!-- Footer -->
 	<!-- Js -->
-	<script src="<?php echo base_url();?>assets/js/jquery.js"></script>
-	<script src="<?php echo base_url();?>assets/js/bootstrap.min.js"></script>
-	<script src="<?php echo base_url();?>assets/js/main.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 </body>
 
 </html>
