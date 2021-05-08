@@ -1,12 +1,3 @@
-# CodeIgniter 2
-Open Source PHP Framework (originally from EllisLab)
-
-For more info, please refer to the user-guide at http://www.codeigniter.com/userguide2/  
-(also available within the download package for offline use)
-
-**WARNING:** *CodeIgniter 2.x is no longer under development and only receives security patches until October 31st, 2015.
-Please update your installation to the latest CodeIgniter 3.x version available
-(upgrade instructions [here](http://www.codeigniter.com/userguide3/installation/upgrade_300.html)).*
 
 
 @ -0,0 +1,25 @@
@@ -21,7 +12,8 @@ Please update your installation to the latest CodeIgniter 3.x version available
 (upgrade instructions [here](http://www.codeigniter.com/userguide3/installation/upgrade_300.html)).*
 
 
-Dejo registro de la creacion de la tabla, todo fue creado por el framework codeIgniter 2
+Dejo registro de la creacion de la tabla, todo fue creado por el framework codeIgniter 2. 
+Debe descargarlo y abrirlo asi: http://localhost/PruebaKonecta
 
 CREATE TABLE `productos` (
   `ID` int(12) NOT NULL,
