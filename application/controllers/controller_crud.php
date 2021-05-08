@@ -42,7 +42,32 @@ class Controller_crud extends CI_Controller {
 		$param['cat'] = $this->input->post('inputcategoria');
 		$param['st'] = $this->input->post('exampleInputStock');
 		$param['fec'] = $fechaRegistro;
+		
 		$resul  = $this->model_crud->guardar($param);
+		
+		if($resul > 0){
+			echo json_encode(1);
+		}
+	}
+
+	public function getproductos(){
+	
+		echo json_encode($this->model_crud->getproductos());
+	}
+
+	public function modificar(){
+		
+		$fechaRegistro = date("Y-m-d");
+		$param['np'] = $this->input->post('exampleInputNamprod_m');
+		$param['re'] = $this->input->post('exampleInputRefe_m');
+		$param['prec'] = $this->input->post('exampleInputPrecio_m');
+		$param['pes'] = $this->input->post('exampleInputPeso_m');
+		$param['cat'] = $this->input->post('inputcategoria_m');
+		$param['st'] = $this->input->post('exampleInputStock_m');
+		$param['id'] = $this->input->post('exampleInputID_m');
+		$param['fec'] = $fechaRegistro;
+	
+		$resul  = $this->model_crud->modificar($param);
 		
 		if($resul > 0){
 			echo json_encode(1);
@@ -50,7 +75,13 @@ class Controller_crud extends CI_Controller {
 		}
 	}
 
-	public function getproductos(){
-		echo json_encode($this->model_crud->getproductos());
+	public function eliminar(){
+		$param['id'] = $this->input->post('id');
+		$resul  = $this->model_crud->eliminar($param);
+		
+		if($resul > 0){
+			echo json_encode(1);
+			
+		}
 	}
 }

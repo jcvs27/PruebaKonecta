@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/datatables.min.css" />
 
 	<title>Prueba Konecta</title>
 </head>
@@ -65,7 +65,7 @@
 					</button>
 					<br><br>
 					<hr>
-		
+
 					<table class="table" id="Tablaproductos">
 						<thead>
 							<tr>
@@ -75,10 +75,12 @@
 								<th scope="col">Precio</th>
 								<th scope="col">Peso</th>
 								<th scope="col">Stock</th>
+								<th scope="col">Modicar</th>
+								<th scope="col">eliminar</th>
 							</tr>
 						</thead>
 						<tbody>
-							
+
 						</tbody>
 					</table>
 
@@ -128,7 +130,52 @@
 									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" id="cerrarmodal" data-dismiss="modal">Close</button>
-										<button type="submit" class="btn btn-primary">Save changes</button>
+										<button type="submit" class="btn btn-primary" id="GuardarProducto">Guardar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!-- end modal -->
+					<!-- Modal para registra productos -->
+					<form method="POST" id="modificarproducto_1" action="<?php echo base_url(); ?>controller_crud/modificar/">
+						<div class="modal fade" id="modificarproducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel_1" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel_1">Modificar de producto</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+
+										<div class="form-group">
+											<label for="exampleInputNamprod">Nombre Producto</label>
+											<input type="text" class="form-control" id="exampleInputNamprod_m" name="exampleInputNamprod_m" placeholder="Enter nombre producto">
+										</div>
+										<div class="form-group">
+											<label for="exampleInputRefe">Referencia</label>
+											<input type="text" class="form-control" id="exampleInputRefe_m" name="exampleInputRefe_m" placeholder="Referencia" >
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPrecio">Precio</label>
+											<input type="number" class="form-control" id="exampleInputPrecio_m" name="exampleInputPrecio_m" placeholder="Precio" required>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPeso">Peso</label>
+											<input type="number" class="form-control" id="exampleInputPeso_m" name="exampleInputPeso_m" placeholder="Peso" required>
+										</div>
+										
+										<div class="form-group">
+											<label for="exampleInputStock">Stock</label>
+											<input type="number" class="form-control" id="exampleInputStock_m" name="exampleInputStock_m" placeholder="Stock" required>
+										</div>
+										<input type="hidden" id="exampleInputID_m" name="exampleInputID_m">
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" id="cerrarmodal_1" data-dismiss="modal">Close</button>
+										<button type="button" class="btn btn-primary" id="modipro">Guardar</button>
 									</div>
 								</div>
 							</div>
@@ -138,21 +185,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- Contenido de la evaluacion -->
-		<div class="container menu_3">
-			<div class="container-list">
-				<div class="list" id="list">
-					<div class="row Fase">
-						<div class="col-md-12 text-center">
-							<p class="parrafo">Enlace de la evaluación en línea.</p>
-							<p class="parrafo">Tiempo límite : 2 Horas</p>
-							<p class="parrafo">Número de Intentos: 1</p>
-							<button class="btn btn-success" id="AbrirQuiz">Abrir Examen</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
 
 
 
