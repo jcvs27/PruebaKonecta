@@ -20,6 +20,7 @@ class Controller_crud extends CI_Controller {
 
      function __construct()
      {
+		
          parent::__construct();
 		 $this->load->model('model_crud');
 		 
@@ -28,6 +29,7 @@ class Controller_crud extends CI_Controller {
 
 	public function index()
 	{
+		
 		$this->load->view('crud');
 		
 	}
@@ -46,8 +48,7 @@ class Controller_crud extends CI_Controller {
 		$resul  = $this->model_crud->guardar($param);
 		
 		if($resul > 0){
-			$this->load->view('crud');
-			echo json_encode(1);
+			return redirect(base_url());
 		}
 	}
 

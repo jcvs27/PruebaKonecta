@@ -1,29 +1,33 @@
 
+var Tabla = {};
+
 $(document).ready(function () {
 
-    //$(".menu_1").show();
+
     $(".menu_2").show();
 
 
- 
+
 
     // Guardar la informacion de la creación del producto
     $('#GuardarProducto').submit(function () {
         $.post(baseurl + 'controller_crud/guardar',
             function (data) {
                 if (data == 1) {
-                    alert('El registro se realizo');
-                    setTimeout(() => {
-                        location.reload();
-                    }, 1200);
+                    $("#cerrarmodal").click();
+                    swal("Ok", "Registro exitoso", "success")
+                        .then((value) => {
+                            $('#Tablaproductos').DataTable().ajax.reload();
+                        });
                 } else {
-                    alert('El registro no se logro hacer');
+                    swal('El registro no se logro hacer');
+                    
                 }
             });
     });
 
 
-    $("#Tablaproductos").DataTable({
+    Tabla = $("#Tablaproductos").DataTable({
         'paging': true,
         'info': true,
         'filter': true,
@@ -35,61 +39,49 @@ $(document).ready(function () {
 
         },
         "columns": [
-            {
-                data: 'ID'
-            }, {
-                data: 'nombre_producto'
-            }, {
-                data: 'referencia'
-            }, {
-                data: 'precio'
-            }, {
-                data: 'peso'
-            },
-            {
-                data: 'stock'
-            },
+            { data: 'ID'}, 
+            { data: 'nombre_producto'}, 
+            { data: 'referencia'}, 
+            { data: 'precio'}, 
+            { data: 'peso'},
+            { data: 'stock'},
             {
                 "orderable": true,
                 render: function (data, type, row) {
-                    return '<a href="#" class="btn btn-success" data-toggle="modal" data-target="#modificarproducto" onClick="funProd(\'' + row.ID + '\',\'' + row.nombre_producto + '\',\'' + row.referencia + '\',\'' + row.precio + '\',\'' + row.peso + '\',\'' + row.stock + '\');" >Editar</a>';
+                    return `<div class="text-center"><a href="#" class="btn btn-success" data-toggle="modal" data-target="#modificarproducto" onClick="funProd('${row.ID}','${row.nombre_producto}','${row.referencia}','${row.precio}','${row.peso}','${row.stock}');" >Editar</a>
+                            <br><hr>
+                            <a href="#" class="btn btn-warning" onClick="funelminar(${row.ID});" >Eliminar</a></div>`;
                 },
 
-            },
-            {
-                "orderable": true,
-                render: function (data, type, row) {
-                    return '<a href="#" class="btn btn-warning" onClick="funelminar(\'' + row.ID + '\');" >Eliminar</a>';
-                },
-
-            },
-
-
+            }
         ],
         "order": [[0, 'DESC']],
 
     });
 
-    // Guardar la informacion Actualizzada de producto
+    // Guardar la informacion Actualizzada del producto
     $(document).on("click", "#modipro", function () {
         $.post(baseurl + 'controller_crud/modificar',
-        {
-            exampleInputNamprod_m :$("#exampleInputNamprod_m").val(),
-            exampleInputRefe_m: $("#exampleInputRefe_m").val(),
-            exampleInputPrecio_m:$("#exampleInputPrecio_m").val(),
-            exampleInputPeso_m:$("#exampleInputPeso_m").val(),
-            exampleInputStock_m:$("#exampleInputStock_m").val(),
-            exampleInputID_m: $("#exampleInputID_m").val()
-        },
+            {
+                exampleInputNamprod_m: $("#exampleInputNamprod_m").val(),
+                exampleInputRefe_m: $("#exampleInputRefe_m").val(),
+                exampleInputPrecio_m: $("#exampleInputPrecio_m").val(),
+                exampleInputPeso_m: $("#exampleInputPeso_m").val(),
+                exampleInputStock_m: $("#exampleInputStock_m").val(),
+                exampleInputID_m: $("#exampleInputID_m").val()
+            },
             function (data) {
-                
+
                 if (data == 1) {
-                    alert('El registro Actualizado');
-                    setTimeout(() => {
-                        location.reload();
-                    }, 1200);
+                    $("#cerrarmodal_1").click();
+                    swal("Ok", "Registro exitoso", "success")
+                        .then((value) => {
+                            $('#Tablaproductos').DataTable().ajax.reload();
+                        });
+                   
                 } else {
-                    alert('El registro no se Actualizo');
+                    swal("El registro no se Actualizo!");
+                    
                 }
             });
     });
@@ -107,15 +99,16 @@ function funProd(id, np, ref, pr, ps, st) {
 
 function funelminar(id) {
     $.post(baseurl + 'controller_crud/eliminar',
-        {id:id},
+        { id: id },
         function (data) {
             if (data == 1) {
-                alert('El registro Eliminado');
-                setTimeout(() => {
-                    location.reload();
-                }, 1200);
+                swal("Ok", "Elimnación exitosa", "success")
+                    .then((value) => {
+                        $('#Tablaproductos').DataTable().ajax.reload();
+                    });
             } else {
-                alert('El registro no se logro Eliminar');
+                swal("El registro no se logro Eliminar!");
+                
             }
         });
 }

@@ -33,9 +33,7 @@
 							<li class="nav-item">
 								<a class="nav-link text-white" id="menu_2" data-toggle="pill" role="tab" aria-controls="pills-gr" aria-selected="false">Registro de productos</a>
 							</li>
-							<li class="nav-item">
-								<a class="nav-link text-white" id="menu_3" data-toggle="pill" role="tab" aria-controls="pills-exam" aria-selected="false">Venta de productos</a>
-							</li>
+
 
 						</ul>
 					</div>
@@ -75,8 +73,7 @@
 								<th scope="col">Precio</th>
 								<th scope="col">Peso</th>
 								<th scope="col">Stock</th>
-								<th scope="col">Modicar</th>
-								<th scope="col">eliminar</th>
+								<th scope="col">Acciones</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -199,8 +196,10 @@
 	</footer>
 	<!-- Footer -->
 	<!-- Js -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<script>
 		var baseurl = "<?php echo base_url(); ?>";
+		
 	</script>
 	<script src="<?php echo base_url(); ?>assets/js/jquery.js"></script>
 	<script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
